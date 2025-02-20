@@ -19,11 +19,5 @@ pipeline {
                 bat 'dotnet test --no-build --verbosity normal'
             }
         }
-        post {
-            always {
-                archiveArtifacts artifacts: '**/TestResults/*.trx', allowEmptyArchive: true
-                junit '**/TestResults/*.trx'
-            }
-        }
     }
 }
